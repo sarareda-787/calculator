@@ -29,4 +29,4 @@ A simple web-based calculator built using HTML, CSS, and JavaScript.
 
 ## Screenshot
 
-![Calculator Capture](Capture.png)
+![Calculator Capture](Capture.PNG)
