@@ -1,7 +1,16 @@
 function calculate() {
-    const num1 = Number(document.getElementById("num1").value);
-    const num2 = Number(document.getElementById("num2").value);
+    const num1Input = document.getElementById("num1").value;
+    const num2Input = document.getElementById("num2").value;
     const operation = document.getElementById("operation").value;
+    const resultElement = document.getElementById("result");
+
+    if (num1Input === "" || num2Input === "") {
+        resultElement.textContent = "Please enter both numbers.";
+        return;
+    }
+
+    const num1 = Number(num1Input);
+    const num2 = Number(num2Input);
 
     let result;
 
@@ -19,9 +28,14 @@ function calculate() {
             break;
 
         case "divide":
+            if (num2 === 0) {
+                resultElement.textContent = "Cannot divide by zero.";
+                return;
+            }
+
             result = num1 / num2;
             break;
     }
 
-    document.getElementById("result").textContent = `Result: ${result}`;
+    resultElement.textContent = `Result: ${result}`;
 }
